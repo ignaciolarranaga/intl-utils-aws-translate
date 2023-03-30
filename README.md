@@ -26,6 +26,7 @@ This utility generates or populates the translation files used by [intl-utils](h
 
 Where the options are:
 * `-V, --version`: output the version number
+* `-p, --pattern [pattern]`: the pattern of the files (default: "**/*.translations.js")
 * `-f, --from [language]`: the language we are translating from
 * `-t, --to [languages...]`: the languages to translate to
 * `-h, --help`: display help for command
@@ -33,6 +34,8 @@ Where the options are:
 **Example**: `intl-util-aws-translate -f en -t es fr it`
 
 > **Note**: The code for the language/languages (es, en, etc.) are the AWS Translate ones (see supported languages in here: [Supported languages and language codes](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html))
+
+> **Note**: When changing the pattern in a shell remember to use quotes to prevent the pattern to expand itself (i.e. *-p "\*\*/\*.translation.js"* not just *-p \*\*/\*.translation.js*)
 
 > **Note**: You can add more keys to an existing file and they will be translated.
 

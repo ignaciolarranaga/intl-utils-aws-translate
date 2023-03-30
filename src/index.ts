@@ -28,6 +28,7 @@ program
   .description('Generates or populates the translation files based on AWS Translate. ' +
   'See supported languages in here: https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html')
   .version('1.0.0')
+  .option('-p, --pattern [pattern]', 'the pattern of the files', '**/*.translations.js')
   .addOption(fromOption)
   .addOption(toOption)
 
@@ -35,6 +36,7 @@ program.parse()
 const opts = program.opts();
 const translateFrom = opts.from;
 const translateTo = opts.to;
+const pattern = opts.pattern;
 
 const translate = new Translate({})
 
@@ -112,7 +114,7 @@ function translateFile(fileName: string) {
   }
 }
 
-const files = new Glob('**/*.translations.js', { withFileTypes: true })
+const files = new Glob(pattern, { withFileTypes: true })
 for (const file of files) {
   translateFile(file.fullpath())
 }
