@@ -1,0 +1,38 @@
+{
+  "name": "intl-utils-aws-translate",
+  "version": "1.0.0",
+  "description": "Helps to automatically translate files for intl-utils using AWS Translate",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignaciolarranaga/intl-utils-aws-translate.git"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "translation",
+    "automatic",
+    "aws",
+    "aws-translate"
+  ],
+  "author": "Ignacio Larrañaga <ignaciolarranaga@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ignaciolarranaga/intl-utils-aws-translate/issues"
+  },
+  "homepage": "https://github.com/ignaciolarranaga/intl-utils-aws-translate#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1346.0",
+    "glob": "^9.3.2"
+  }
+}
