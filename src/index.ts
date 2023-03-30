@@ -25,7 +25,7 @@ const toOption = new Option('-t, --to [languages...]', 'the languages to transla
 
 program
   .name('intl-util-aws-translate')
-  .description('Generates the translation files based on AWS Translate. ' +
+  .description('Generates or populates the translation files based on AWS Translate. ' +
   'See supported languages in here: https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html')
   .version('1.0.0')
   .addOption(fromOption)
