@@ -4,6 +4,24 @@ This utility generates or populates the translation files used by [intl-utils](h
 
 > Please notice you need to have the AWS credentials configured when running the command so they can be used by the utility. See [Setting Credentials in Node.js](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/setting-credentials-node.html)
 
+## Usage
+
+1. Install by running `npm i -D intl-util-aws-translate`
+
+2. Add a script to your package.json as follows:
+```
+"scripts": {
+    "translate": "intl-utils-translate ..."
+    ...
+  },
+```
+
+> See below in the [Command] section for the options
+
+3. Run `npm run translate` to translate all the files in your project.
+
+## Options
+
 **Usage**: intl-util-aws-translate [options]
 
 Where the options are:
