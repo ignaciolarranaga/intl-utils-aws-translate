@@ -7,6 +7,7 @@
     "intl-utils-aws-translate": "bin/translate.js"
   },
   "scripts": {
+    "prepublish": "npm run build",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\"",
     "build": "tsc",
