@@ -1,8 +1,8 @@
 import fs from 'fs';
 import { Glob } from 'glob';
-import AWS from 'aws-sdk';
+import { Translate } from "@aws-sdk/client-translate";
 
-const translate = new AWS.Translate();
+const translate = new Translate({});
 const LANGUAGES = ['es', 'fr', 'it', 'pt'];
 
 interface Job {
@@ -12,6 +12,10 @@ interface Job {
   Text: string,
 }
 
+/**
+ * This function translates the contents of a file name, writing down the output on the same file
+ * @param fileName The name of the file to process
+ */
 function translateFile(fileName: string) {
   const file = require(fileName);
 
@@ -34,7 +38,7 @@ function translateFile(fileName: string) {
   if (jobs.length > 0) {
     Promise.all(
       jobs.map(({ OriginalText, ...job }) =>
-        translate.translateText(job).promise()
+        translate.translateText(job)
       )
     ).then(results => {
       for (let i = 0; i < jobs.length; i++) {
@@ -59,8 +63,7 @@ function translateFile(fileName: string) {
   }
 }
 
-const files = new Glob('**/*.translations.js', {});
+const files = new Glob('**/*.translations.js', { withFileTypes: true });
 for (const file of files) {
-  console.log('found a foo file:', file);
-  //translateFile(file);
+  translateFile(file.fullpath());
 }
