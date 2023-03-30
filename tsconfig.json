@@ -27,5 +27,5 @@
     /* Completeness */
     "skipLibCheck": true
   },
-  "exclude": ["jest.config.js", "node_modules", "dist"]
+  "exclude": ["jest.config.js", "node_modules", "dist", "bin"]
 }
