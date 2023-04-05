@@ -1,6 +1,6 @@
 {
   "name": "intl-utils-aws-translate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helps to automatically translate files for intl-utils using AWS Translate",
   "main": "dist/index.js",
   "bin": {
